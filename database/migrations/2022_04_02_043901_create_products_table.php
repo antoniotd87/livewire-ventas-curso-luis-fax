@@ -22,8 +22,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->integer('alerts');
             $table->string('image');
-            $table->unsignedBigInteger('category_id');
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('category_id')->constrained();
             $table->timestamps();
         });
     }
