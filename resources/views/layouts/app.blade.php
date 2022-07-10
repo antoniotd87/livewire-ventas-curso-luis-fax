@@ -17,6 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/elements/avatar.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
     @livewireStyles()
@@ -47,8 +52,8 @@
             </div>
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">
-                    <p class="">Copyright © 2021 <a target="_blank"
-                            href="https://designreset.com">DesignReset</a>, All rights reserved.</p>
+                    <p class="">Sistema LWPOS<a target="_blank" href="https://designreset.com">DesignReset</a>,
+                        All rights reserved.</p>
                 </div>
                 <div class="footer-section f-section-2">
                     <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -78,10 +83,22 @@
         });
     </script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-
+    <script>
+        function notify(msg, option = 1) {
+            Snackbar.show({
+                text: msg.toUpperCase(),
+                actionText: 'CERRAR'
+                actionTextColor: '#FFF',
+                backgroundColor: option == 1 ? '#3B3F5C' : '#E7515A';
+                pos: 'top-right'
+            })
+        }
+    </script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
     @livewireScripts()
