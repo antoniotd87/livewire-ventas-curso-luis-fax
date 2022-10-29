@@ -18,7 +18,6 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/elements/avatar.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
@@ -74,6 +73,7 @@
     <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('plugins/font-icons/feather/feather.min.js') }}"></script>
     <script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
@@ -92,12 +92,14 @@
         function notify(msg, option = 1) {
             Snackbar.show({
                 text: msg.toUpperCase(),
-                actionText: 'CERRAR'
+                actionText: 'CERRAR',
                 actionTextColor: '#FFF',
-                backgroundColor: option == 1 ? '#3B3F5C' : '#E7515A';
+                backgroundColor: option == 1 ? '#3B3F5C' : '#E7515A',
                 pos: 'top-right'
             })
         }
+
+        feather.replace()
     </script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
